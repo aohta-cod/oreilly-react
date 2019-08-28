@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello React</title>
+  </head>
+  <body>
+    <div id="parent">
+      <button id="ok">OK</button>
+      <button id="cancel">Cancel</button>
+    </div>
+
+    
+    <script src="react/build/react.js"></script> <!-- Reactライブラリのインクルード -->
+    <script src="react/build/react-dom.js"></script> <!-- DOM関連機能アドオンのインクルード -->
+    
+    <script>
+    document.getElementById('parent').addEventListener('click', function(event) {
+      var button = event.target;
+
+      switch(button.id) {
+        case 'ok':
+          console.log("OK!");
+          break;
+        case 'cancel':
+          console.log('Cancel');
+          break;
+        default:
+          new Error('Invalid ID')
+      }
+    })
+    </script>
+  </body>
+</html>
